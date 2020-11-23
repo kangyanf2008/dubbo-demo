@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: java-provider-demo
+dubbo:
+  application:
+    name: provider-demo
+    owner: zk
+  registry:
+    address: zookeeper://192.168.34.152:2181
+    timeout: 5000
+  protocol:
+    name: dubbo
+    port: 9080
+    threadname: data_service
+    threads: 10
+    keep-alive: true
+#  scan: com.dubbo.*.service.*
+  provider:
+    retries: 1    #重试次数
+    timeout: 3000 #超时时间
+
+logging:
+  config: classpath:logback-dev.xml

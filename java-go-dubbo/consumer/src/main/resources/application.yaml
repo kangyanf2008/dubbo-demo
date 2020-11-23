@@ -1,0 +1,20 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: consumer-demo
+dubbo:
+  application:
+    name: consumer-demo
+    owner: zk
+  registry:
+    address: zookeeper://192.168.34.152:2181
+    timeout: 5000
+  consumer:
+    timeout: 5000
+    check: false
+
+
+logging:
+  config: classpath:logback.xml
