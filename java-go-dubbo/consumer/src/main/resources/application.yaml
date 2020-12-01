@@ -18,3 +18,4 @@ dubbo:
 
 logging:
   config: classpath:logback.xml
+debug: true

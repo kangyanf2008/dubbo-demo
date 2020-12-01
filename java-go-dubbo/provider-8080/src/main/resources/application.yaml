@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: java-provider-demo
@@ -10,7 +11,8 @@ dubbo:
     timeout: 5000
   protocol:
     name: dubbo
-    port: 8080
+    #port: 8080
+    port: -1
     threadname: data_service
     threads: 10
     keep-alive: true
@@ -26,3 +28,4 @@ dubbo:
 
 logging:
   config: classpath:logback.xml
+debug: true

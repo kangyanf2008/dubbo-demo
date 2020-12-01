@@ -24,7 +24,7 @@ services:
     protocol : "dubbo"
     # 相当于dubbo.xml中的interface
     interface : "com.dubbo.demo.service.DataService"
-    loadbalance: "random"
+    loadbalance: "roundrobin"
     version: "1.0.0"
 #    warmup: "100"
 #    cluster: "failover"

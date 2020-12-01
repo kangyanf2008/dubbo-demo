@@ -10,7 +10,8 @@ dubbo:
     timeout: 5000
   protocol:
     name: dubbo
-    port: 9080
+    #port: 9080
+    port: -1
     threadname: data_service
     threads: 10
     keep-alive: true
@@ -21,3 +22,4 @@ dubbo:
 
 logging:
   config: classpath:logback-dev.xml
+debug: true

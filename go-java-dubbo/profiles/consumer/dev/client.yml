@@ -48,7 +48,7 @@ references:
 protocol_conf:
   dubbo:
     reconnect_interval: 0
-    connection_number: 1
+    connection_number: 3
     heartbeat_period: "30s"
     session_timeout: "180s"
     pool_size: 64

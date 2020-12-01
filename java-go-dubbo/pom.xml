@@ -25,10 +25,13 @@
         <java.version>1.8</java.version>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
-        <dubbo-spring-boot.version>2.7.7</dubbo-spring-boot.version>
-        <dubbo.version>2.7.7</dubbo.version>
-<!--        <dubbo-spring-boot.version>2.6.5</dubbo-spring-boot.version>
-        <dubbo.version>2.6.5</dubbo.version>-->
+<!--        <dubbo-spring-boot.version>2.7.7</dubbo-spring-boot.version>
+        <dubbo.version>2.7.7</dubbo.version>-->
+        <zkclient.version>0.10</zkclient.version>
+        <springboot.version>2.2.5.RELEASE</springboot.version>
+
+        <dubbo-spring-boot.version>2.0.0</dubbo-spring-boot.version>
+        <dubbo.version>2.6.0</dubbo.version>
         <zookeeper.version>3.4.8</zookeeper.version>
         <spring-boot-maven-plugin.version>2.3.5.RELEASE</spring-boot-maven-plugin.version>
         <project>1.0-SNAPSHOT</project>
@@ -43,7 +46,10 @@
     <!--声明全局依赖（子项目不需要显示的引用，自动继承依赖）-->
     <dependencyManagement>
         <dependencies>
+
+
             <!-- Spring Boot dependencies -->
+            <!--
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
@@ -70,7 +76,86 @@
                         <artifactId>log4j</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>-->
+
+            <dependency>
+                <groupId>com.alibaba.spring.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>dubbo</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-api</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>log4j</artifactId>
+                        <groupId>log4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${springboot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-start</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-json</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-webmvc</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-validation</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.apache.curator</groupId>
@@ -78,11 +163,11 @@
                 <version>4.0.1</version>
             </dependency>
 
-            <dependency>
+    <!--        <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>2.3.0.RELEASE</version>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>org.apache.curator</groupId>

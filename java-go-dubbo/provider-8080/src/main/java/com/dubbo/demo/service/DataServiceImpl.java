@@ -1,17 +1,19 @@
 package com.dubbo.demo.service;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.dubbo.demo.model.RequestData;
 import com.dubbo.demo.model.ResponseData;
-import org.apache.dubbo.config.annotation.DubboService;
+//import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@DubboService(version = "1.0.0")
+@Service(interfaceClass = DataService.class, version = "1.0.0")
+//@DubboService(version = "1.0.0")
 //@DubboService(version = "*")
-@Service
+//@Service
 @Component
 public class DataServiceImpl implements DataService {
 
