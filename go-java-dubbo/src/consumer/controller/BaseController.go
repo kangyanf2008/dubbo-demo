@@ -19,6 +19,7 @@ var (
 func Run() {
 	router := gin.New()
 	router.GET("/consumer/index/:table", index)
+	router.GET("/consumer/index2/:table", index2)
 	server = &http.Server{
 		Handler: router,
 	}
@@ -36,6 +37,15 @@ func index(c *gin.Context) {
 	c.String(200, fmt.Sprintf("Hello World #%v!",responseData))
 }
 
+func index2(c *gin.Context) {
+	table := c.Param("table")
+	b := &model.RequestListData{RequestData: &model.RequestData{Table:table}, ListId:[]int64{12,13,18}}
+	//responseData, _:= service.DataService.DataList(b)
+	responseData := &model.ResponseListData{}
+	err := service.DataService.DataList2(context.Background(), b, responseData)
+	fmt.Println(err)
+	c.String(200, fmt.Sprintf("Hello World #%v!",responseData))
+}
 
 //服务退出
 func Shutdown() {

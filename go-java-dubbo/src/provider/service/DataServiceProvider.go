@@ -34,6 +34,15 @@ func (u *DataServiceProvider) DataList(ctx context.Context, reqData *model.Reque
 	return responseData, nil
 }
 
+func (u *DataServiceProvider) DataListMethod(ctx context.Context, reqData *model.RequestListData) (*model.ResponseListData, error) {
+	fmt.Println("call:%#v \n", reqData)
+	responseData := &model.ResponseListData{}
+	responseData.Table = "go provider " + reqData.RequestData.Table
+	responseData.Data= reqData.ListId
+	fmt.Printf("rsp:%#v \n", responseData)
+	return responseData, nil
+}
+
 func (u *DataServiceProvider) Reference() string {
 	return "com.dubbo.demo.service.DataService"
 }

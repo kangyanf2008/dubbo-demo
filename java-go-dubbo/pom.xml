@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-<!--    <parent>
+    <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
-        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
-    </parent>-->
+        <relativePath/>
+    </parent>
     <groupId>dubbo-demo</groupId>
     <artifactId>go-dubbo-java</artifactId>
     <packaging>pom</packaging>
@@ -25,8 +25,8 @@
         <java.version>1.8</java.version>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
-<!--        <dubbo-spring-boot.version>2.7.7</dubbo-spring-boot.version>
-        <dubbo.version>2.7.7</dubbo.version>-->
+        <!--        <dubbo-spring-boot.version>2.7.7</dubbo-spring-boot.version>
+                <dubbo.version>2.7.7</dubbo.version>-->
         <zkclient.version>0.10</zkclient.version>
         <springboot.version>2.2.5.RELEASE</springboot.version>
 
@@ -128,7 +128,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
+           <!-- <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${springboot.version}</version>
@@ -154,7 +154,7 @@
                         <artifactId>spring-boot-starter-validation</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
+            </dependency>-->
 
 
             <dependency>
@@ -163,11 +163,11 @@
                 <version>4.0.1</version>
             </dependency>
 
-    <!--        <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>2.3.0.RELEASE</version>
-            </dependency>-->
+            <!--        <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter</artifactId>
+                        <version>2.3.0.RELEASE</version>
+                    </dependency>-->
 
             <dependency>
                 <groupId>org.apache.curator</groupId>

@@ -15,7 +15,8 @@ registries :
   "demoZk":
     protocol: "zookeeper"
     timeout	: "3s"
-    address: "192.168.34.152:2181"
+    #address: "192.168.34.152:2181"
+    address: "127.0.0.1:2181"
 
 services:
   "com.dubbo.demo.service.DataService":
